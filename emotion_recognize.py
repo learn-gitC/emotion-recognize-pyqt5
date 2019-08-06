@@ -6,7 +6,7 @@ import numpy as np
 import cv2
 
 from PyQt5.QtCore import pyqtSignal, QBasicTimer, Qt
-from PyQt5.QtGui import QPixmap, QImage
+from PyQt5.QtGui import QPixmap, QImage, QIcon
 from PyQt5.QtWidgets import *
 
 import EmotionRecognition as eg
@@ -22,10 +22,12 @@ class Window(QWidget):
         self.emotionRecognition = eg.EmotionRecognition()
 
     def set_ui(self):
+
+        icon = QIcon('icon.png')
         # 布局设置
         self.layout_main = QHBoxLayout()  # 整体框架是水平布局
         self.layout_button = QVBoxLayout()  # 按键布局是垂直布局
-
+        self.setWindowIcon(icon)
         # 按钮设置
         self.btn_photo = QPushButton(u'拍照识别')
         self.btn_video = QPushButton(u'实时识别')
