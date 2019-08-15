@@ -20,7 +20,7 @@ class EmotionRecognition():
             feature = np.concatenate([hog_feature, lbp_feature])
             predict = self.model.predict(feature.reshape((1, -1)))
         else:
-            predict = -1;
+            predict = -1
         print('%s:  %s' % ("the emotion of image is: ", self.emotion_list[np.int(predict)]))
         return self.emotion_list[np.int(predict)]
 
