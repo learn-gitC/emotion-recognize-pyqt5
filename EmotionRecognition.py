@@ -70,7 +70,6 @@ class EmotionRecognition():
     def saveFaces(self, image_path):
         faces = self.detectFaces(image_path)
         if faces:
-            # 将人脸保存在save_dir目录下。
             # Image模块：Image.open获取图像句柄，crop剪切图像(剪切的区域就是detectFaces返回的坐标)，save保存。
             for (x1, y1, x2, y2) in faces:
                 image = Image.fromarray(image_path).crop((x1, y1, x2, y2)).convert('RGB').resize((64, 64))
